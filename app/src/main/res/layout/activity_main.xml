@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/grey"
+      >
+
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_width="285dp"
+          android:layout_height="48dp"
+          android:elevation="10dp"
+          android:layout_marginTop="17dp"
+          android:layout_marginBottom="10dp"
+          android:layout_marginRight="58dp"
+          android:layout_marginLeft="30dp"
+          android:background="@color/white"
+          >
+
+          <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="20dp"
+              android:layout_marginTop="10dp"
+              android:layout_marginBottom="14dp"
+              android:layout_marginRight="18dp"
+              app:srcCompat="?android:attr/actionModeWebSearchDrawable"
+              />
+          <EditText
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginRight="102dp"
+              android:layout_marginBottom="14dp"
+              android:layout_marginTop="10dp"
+              android:hint="Поиск"
+
+              />
+
+          <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="20dp"
+
+              app:srcCompat="@android:drawable/ic_menu_info_details" />
+      </LinearLayout>
+
+
+
+
+  </FrameLayout>
+</LinearLayout>
