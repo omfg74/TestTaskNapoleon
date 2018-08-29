@@ -54,13 +54,14 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/grey"              >
+        android:background="@color/grey"
+        android:elevation="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Top 10"
             android:background="@drawable/rectngle"
-            android:layout_marginLeft="17dp"
+            android:layout_marginLeft="22dp"
             android:layout_marginTop="17dp"
             android:layout_marginRight="18dp"
             android:layout_marginBottom="17dp"
