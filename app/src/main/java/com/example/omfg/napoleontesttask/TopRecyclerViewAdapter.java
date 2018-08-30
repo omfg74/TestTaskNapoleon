@@ -15,10 +15,12 @@ import java.util.List;
 
 public class TopRecyclerViewAdapter extends RecyclerView.Adapter<TopRecyclerViewAdapter.TopViewHolder> {
     private List<TopRecyclerViewItem> items;
-Context context;
+    Context context;
+
     public TopRecyclerViewAdapter(Context context, List<TopRecyclerViewItem> items) {
         this.context = context;
         this.items = items;
+
 
     }
 
@@ -34,7 +36,9 @@ Context context;
     @Override
     public void onBindViewHolder(@NonNull TopViewHolder holder, int position) {
 
-       holder.
+       holder.bind(items.get(position));
+        System.out.println(position);
+        System.out.println(items.get(position).getTextView());
     }
 
     @Override
@@ -42,7 +46,7 @@ Context context;
         return items.size();
     }
 
-    public void setItems(Collection<TopRecyclerViewItem> item){
+    public void setItems(List<TopRecyclerViewItem> item){
         items.addAll(item);
         notifyDataSetChanged();
     }
@@ -65,8 +69,9 @@ Context context;
 
         }
         public void bind(TopRecyclerViewItem item){
-            topRecyclerViewText.setText("TEST TEXT");
-            topRecyclerViewImage.setImageBitmap(R.drawable.ic_launcher_background);
+            topRecyclerViewText.setText(item.getTextView());
+            System.out.println(item.getImageView());
+
         }
 
 

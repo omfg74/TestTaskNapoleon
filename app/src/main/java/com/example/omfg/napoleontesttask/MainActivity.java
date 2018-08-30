@@ -21,16 +21,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        item = new TopRecyclerViewItem();
         items = new ArrayList<>();
+
+        for (int i = 0; i <10 ; i++) {
+            item = new TopRecyclerViewItem();
+            item.setTextView("TEST "+i);
+            items.add(item);
+        }
         mRecyclerView  = (RecyclerView)findViewById(R.id.top_horizontal_recycler_view);
 
 
         mRecyclerView.setHasFixedSize(true);
 
-        mLayoutManager = new LinearLayoutManager(this);
+        mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         mRecyclerView.setLayoutManager(mLayoutManager);
+        for (int i = 0; i <items.size() ; i++) {
+            System.out.println(items.get(i).getTextView());
+        }
         mAdapter = new TopRecyclerViewAdapter(this,  items);
         mRecyclerView.setAdapter(mAdapter);
     }
