@@ -1,4 +1,4 @@
-package com.example.omfg.napoleontesttask;
+package com.example.omfg.napoleontesttask.ViewControllers;
 
 import android.media.Image;
 import android.widget.ImageView;

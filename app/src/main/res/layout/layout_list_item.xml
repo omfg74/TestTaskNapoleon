@@ -9,6 +9,9 @@
     android:orientation="vertical"
     >
 
+
+
+    <!--ТУт старый рабочий код-->
     <FrameLayout
         android:layout_width="235dp"
         android:layout_height="165dp"

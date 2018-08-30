@@ -1,4 +1,4 @@
-package com.example.omfg.napoleontesttask;
+package com.example.omfg.napoleontesttask.ViewControllers;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,10 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.Collection;
+import com.example.omfg.napoleontesttask.R;
+
 import java.util.List;
 
 public class TopRecyclerViewAdapter extends RecyclerView.Adapter<TopRecyclerViewAdapter.TopViewHolder> {
@@ -37,22 +37,11 @@ public class TopRecyclerViewAdapter extends RecyclerView.Adapter<TopRecyclerView
     public void onBindViewHolder(@NonNull TopViewHolder holder, int position) {
 
        holder.bind(items.get(position));
-        System.out.println(position);
-        System.out.println(items.get(position).getTextView());
     }
 
     @Override
     public int getItemCount() {
         return items.size();
-    }
-
-    public void setItems(List<TopRecyclerViewItem> item){
-        items.addAll(item);
-        notifyDataSetChanged();
-    }
-    public void clearItems(){
-        items.clear();
-        notifyDataSetChanged();
     }
 
     public static class TopViewHolder extends RecyclerView.ViewHolder{

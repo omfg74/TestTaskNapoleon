@@ -7,4 +7,8 @@
     <color name="white">#ffffff</color>
     <color name="light_blue">#588ae9</color>
     <color name="light_white">#99ffffff</color>
+    <color name="discount_red">#ee7c78</color>
+    <color name="trash_red">#ea3223</color>
+    <color name="text_grey">#808080</color>
+
 </resources>
