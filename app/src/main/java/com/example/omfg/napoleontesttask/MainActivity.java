@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_main);
         items = new ArrayList<>();
 
         for (int i = 0; i <10 ; i++) {
@@ -51,13 +51,13 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayout mainDiscountLayout = (LinearLayout)findViewById(R.id.sales_linear_layout);
 
-        ConstraintLayout constraintLayout = new ConstraintLayout(MainActivity.this);
-        constraintLayout.setId(R.id.sales_constrant_layout);
-        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        constraintLayout.setLayoutParams(params);
-        mainDiscountLayout.addView(constraintLayout);
-        setContentView(R.layout.activity_main);
+//        ConstraintLayout constraintLayout = new ConstraintLayout(MainActivity.this);
+//        constraintLayout.setId(R.id.sales_constrant_layout);
+//        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+//        constraintLayout.setLayoutParams(params);
+//        mainDiscountLayout.addView(constraintLayout);
 
+        getLayoutInflater().inflate(R.layout.sales_layout,mainDiscountLayout);
 
 
     }
