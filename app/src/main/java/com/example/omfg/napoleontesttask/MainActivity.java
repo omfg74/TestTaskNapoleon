@@ -1,9 +1,11 @@
 package com.example.omfg.napoleontesttask;
 
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.LinearLayout;
 
 import com.example.omfg.napoleontesttask.ViewControllers.TopRecyclerViewAdapter;
 import com.example.omfg.napoleontesttask.ViewControllers.TopRecyclerViewItem;
@@ -43,5 +45,13 @@ public class MainActivity extends AppCompatActivity {
         }
         mAdapter = new TopRecyclerViewAdapter(this,  items);
         mRecyclerView.setAdapter(mAdapter);
+
+
+        LinearLayout mainDiscountLayout = (LinearLayout)findViewById(R.id.sales_linear_layout);
+
+        ConstraintLayout constraintLayout = new ConstraintLayout(MainActivity.this);
+        mainDiscountLayout.addView(constraintLayout);
+
+
     }
 }
