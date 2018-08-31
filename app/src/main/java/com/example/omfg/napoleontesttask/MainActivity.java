@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
         items = new ArrayList<>();
 
         for (int i = 0; i <10 ; i++) {
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         constraintLayout.setLayoutParams(params);
         mainDiscountLayout.addView(constraintLayout);
-        setContentView(R.layout.sales_layout);
+        setContentView(R.layout.activity_main);
 
 
 
