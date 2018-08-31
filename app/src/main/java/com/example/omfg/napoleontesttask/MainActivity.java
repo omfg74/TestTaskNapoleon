@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.omfg.napoleontesttask.ViewControllers.TopRecyclerViewAdapter;
@@ -50,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout mainDiscountLayout = (LinearLayout)findViewById(R.id.sales_linear_layout);
 
         ConstraintLayout constraintLayout = new ConstraintLayout(MainActivity.this);
+        constraintLayout.setId(R.id.sales_constrant_layout);
+        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        constraintLayout.setLayoutParams(params);
         mainDiscountLayout.addView(constraintLayout);
 
 
