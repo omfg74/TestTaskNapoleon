@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         constraintLayout.setLayoutParams(params);
         mainDiscountLayout.addView(constraintLayout);
-        setContentView(R.layout.activity_main);
+        setContentView(R.id.sales_constrant_layout);
 
 
 
