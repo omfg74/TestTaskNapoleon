@@ -1,5 +1,6 @@
 package com.example.omfg.napoleontesttask.ViewControllers;
 
+
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,18 +9,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import AppObjects.Banner;
 
+import com.example.omfg.napoleontesttask.Networking.Requests.ImageDownloader;
 import com.example.omfg.napoleontesttask.R;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+
 
 public class TopRecyclerViewAdapter extends RecyclerView.Adapter<TopRecyclerViewAdapter.TopViewHolder> {
-    private List<TopRecyclerViewItem> items;
+    private List<Banner> banners;
     Context context;
 
-    public TopRecyclerViewAdapter(Context context, List<TopRecyclerViewItem> items) {
+    public TopRecyclerViewAdapter(Context context, List<Banner> banners) {
         this.context = context;
-        this.items = items;
+        this.banners = banners;
 
 
     }
@@ -36,32 +41,46 @@ public class TopRecyclerViewAdapter extends RecyclerView.Adapter<TopRecyclerView
     @Override
     public void onBindViewHolder(@NonNull TopViewHolder holder, int position) {
 
-       holder.bind(items.get(position));
+       holder.bind(banners.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return items.size();
+        return banners.size();
     }
 
     public static class TopViewHolder extends RecyclerView.ViewHolder{
         private ImageView topRecyclerViewImage;
         private TextView topRecyclerViewText;
+        private TextView topRecyclerViewDec;
 
         public TopViewHolder(View itemView){
             super(itemView);
 
             topRecyclerViewImage = itemView.findViewById(R.id.top_recyclerView_image);
             topRecyclerViewText = itemView.findViewById(R.id.top_recyclerView_Text);
+            topRecyclerViewDec = itemView.findViewById(R.id.top_recyclerView_Desc);
 
 
 
         }
-        public void bind(TopRecyclerViewItem item){
-            topRecyclerViewText.setText(item.getTextView());
-            System.out.println(item.getImageView());
+        public void bind(Banner banner){
+            topRecyclerViewText.setText(banner.getTitle());
+            ImageDownloader imageDownloader = new ImageDownloader();
+            imageDownloader.execute(banner.getImage());
+
+
+            try {
+                topRecyclerViewImage.setImageBitmap(imageDownloader.get());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+            topRecyclerViewDec.setText(banner.getDesc());
 
         }
+
 
 
 

@@ -11,8 +11,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.omfg.napoleontesttask.Networking.Interfaces.ResponseInterface;
+import com.example.omfg.napoleontesttask.Utils.ResponseController;
 import com.example.omfg.napoleontesttask.ViewControllers.TopRecyclerViewAdapter;
 import com.example.omfg.napoleontesttask.ViewControllers.TopRecyclerViewItem;
+import AppObjects.Banner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,13 +33,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        items = new ArrayList<>();
+        ResponseInterface responseInterface = new ResponseController();
+        List<Banner> banners = new ArrayList<>();
 
-        for (int i = 0; i <10 ; i++) {
-            item = new TopRecyclerViewItem();
-            item.setTextView("TEST "+i);
-            items.add(item);
-        }
+        banners = responseInterface.createGetBannerResponse();
+
         mRecyclerView  = (RecyclerView)findViewById(R.id.top_horizontal_recycler_view);
 
 
@@ -44,10 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        for (int i = 0; i <items.size() ; i++) {
-            System.out.println(items.get(i).getTextView());
-        }
-        mAdapter = new TopRecyclerViewAdapter(this,  items);
+        mAdapter = new TopRecyclerViewAdapter(this,  banners);
         mRecyclerView.setAdapter(mAdapter);
 
 
