@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.omfg.napoleontesttask.ViewControllers.TopRecyclerViewAdapter;
 import com.example.omfg.napoleontesttask.ViewControllers.TopRecyclerViewItem;
@@ -49,15 +51,18 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
 
-        LinearLayout mainDiscountLayout = (LinearLayout)findViewById(R.id.sales_linear_layout);
+        for (int i = 0; i <2 ; i++) {
 
-//        ConstraintLayout constraintLayout = new ConstraintLayout(MainActivity.this);
-//        constraintLayout.setId(R.id.sales_constrant_layout);
-//        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-//        constraintLayout.setLayoutParams(params);
-//        mainDiscountLayout.addView(constraintLayout);
 
-        getLayoutInflater().inflate(R.layout.sales_layout,mainDiscountLayout);
+            LinearLayout mainDiscountLayout = (LinearLayout) findViewById(R.id.sales_linear_layout);
+
+            LayoutInflater layoutInflater = getLayoutInflater();
+            View constLayout = layoutInflater.inflate(R.layout.sales_layout, mainDiscountLayout, false);
+
+            TextView textView = (TextView) constLayout.findViewById(R.id.item_name_TextView);
+            textView.setText("THIS IS TEST IMPLEMENTATION");
+            mainDiscountLayout.addView(constLayout);
+        }
 
 
     }
