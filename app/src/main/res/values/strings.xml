@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">napoleonTestTask</string>
     <string name="info">info</string>
+    <string name="title_activity_info">InfoActivity</string>
 </resources>

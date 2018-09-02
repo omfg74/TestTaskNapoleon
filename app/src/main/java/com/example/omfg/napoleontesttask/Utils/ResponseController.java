@@ -1,6 +1,7 @@
 package com.example.omfg.napoleontesttask.Utils;
 
 import android.content.Context;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.example.omfg.napoleontesttask.Networking.Requests.BannerRequst;
@@ -14,7 +15,7 @@ import AppObjects.Banner;
 import AppObjects.Offer;
 
 public class ResponseController implements ResponseInterface {
-
+//Класс отвечающий за передачу и вызов запров.
     @Override
     public List<Banner> createGetBannerResponse() {
         BannerRequst bannerRequst = new BannerRequst();
@@ -24,7 +25,7 @@ public class ResponseController implements ResponseInterface {
     }
 
     @Override
-    public List<Offer> createGetOffersResponse(LinearLayout linearLayout, LinearLayout linearLayout2,Context context) {
+    public List<Offer> createGetOffersResponse(FrameLayout linearLayout, LinearLayout linearLayout2, Context context) {
         List<Offer> offers = new ArrayList<>();
 
         OfferstGetRequest offerstGetRequest = new OfferstGetRequest(offers,linearLayout, linearLayout2,context);

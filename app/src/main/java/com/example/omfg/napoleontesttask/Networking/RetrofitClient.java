@@ -9,6 +9,9 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
+//Клиент для работы с апи. Небыло острой необходимости выносиь его в отдельный класс, однако
+//если бы запросов было больше это значительно бы сэкономило время
 public class RetrofitClient {
     private static RetrofitClient instance = null;
     private Retrofit retrofit;
@@ -17,7 +20,7 @@ public class RetrofitClient {
     private RetrofitInterface retrofitInterface;
 
     public RetrofitClient() {
-
+//Перехватчик ответов сервера, работает тольок при отладочной сборке, здесь исключительно для отладки запросов
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient.Builder okHttpBuilder = new OkHttpClient.Builder();
