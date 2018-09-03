@@ -114,16 +114,16 @@ public class OfferstGetRequest {
                             if (offers.get(i).getGroupName().equalsIgnoreCase("Акции")) {
 
                                 linearLayout.addView(constLayout);
-                                linearLayout.setOnTouchListener(new LayoutMover(context) {
-                                    @Override
-                                    public void onSwipe() {
-                                        super.onSwipe();
-                                        Log.d("SWIPE", "SUCSESS");
-                                        Animation animation = AnimationUtils.loadAnimation(context, R.anim.transform_to_left);
-
-                                        linearLayout.startAnimation(animation);
-                                    }
-                                });
+//                                linearLayout.setOnTouchListener(new LayoutMover(context) {
+//                                    @Override
+//                                    public void onSwipe() {
+//                                        super.onSwipe();
+//                                        Log.d("SWIPE", "SUCSESS");
+//                                        Animation animation = AnimationUtils.loadAnimation(context, R.anim.transform_to_left);
+//
+//                                        linearLayout.startAnimation(animation);
+//                                    }
+//                                });
                             } else {
                                 linearLayout2.addView(constLayout);
                             }
