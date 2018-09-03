@@ -33,10 +33,10 @@ public class OfferstGetRequest {
 
     List<AppObjects.Offer> offers = new ArrayList<>();
     FrameLayout linearLayout;
-            LinearLayout linearLayout2;
+    FrameLayout linearLayout2;
     Context context;
 
-    public OfferstGetRequest(List<Offer> offers, FrameLayout linearLayout, LinearLayout linearLayout2, Context context) {
+    public OfferstGetRequest(List<Offer> offers, FrameLayout linearLayout, FrameLayout linearLayout2, Context context) {
         this.offers = offers;
         this.linearLayout = linearLayout;
         this.context = context;
@@ -114,11 +114,11 @@ public class OfferstGetRequest {
                             if (offers.get(i).getGroupName().equalsIgnoreCase("Акции")) {
 
                                 linearLayout.addView(constLayout);
-                                linearLayout.setOnTouchListener(new LayoutMover(context){
+                                linearLayout.setOnTouchListener(new LayoutMover(context) {
                                     @Override
                                     public void onSwipe() {
                                         super.onSwipe();
-                                        Log.d("SWIPE","SUCSESS");
+                                        Log.d("SWIPE", "SUCSESS");
                                         Animation animation = AnimationUtils.loadAnimation(context, R.anim.transform_to_left);
 
                                         linearLayout.startAnimation(animation);

@@ -11,6 +11,6 @@ import AppObjects.Banner;
 public interface ResponseInterface {
     public List<Banner> createGetBannerResponse();
 
-    public List<AppObjects.Offer> createGetOffersResponse(FrameLayout linearLayout, LinearLayout linearLayout2, Context context);
+    public List<AppObjects.Offer> createGetOffersResponse(FrameLayout linearLayout, FrameLayout linearLayout2, Context context);
 
 }
