@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.omfg.napoleontesttask.Networking.Interfaces.ResponseInterface;
@@ -46,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         List<Banner> banners = new ArrayList<>();
 
         infoImageView = (ImageView) findViewById(R.id.info_image_view);
-        FrameLayout mainOfferstLayout = (FrameLayout) findViewById(R.id.sales_linear_layout);
-        FrameLayout mainOtherLayout = (FrameLayout) findViewById(R.id.other_linear_layout);
+        LinearLayout mainOfferstLayout = (LinearLayout) findViewById(R.id.sales_linear_layout);
+        LinearLayout mainOtherLayout = (LinearLayout) findViewById(R.id.other_linear_layout);
         ResponseInterface offersResponse = new ResponseController();
         List<AppObjects.Offer> offers = new ArrayList<>();
         offers = offersResponse.createGetOffersResponse(mainOfferstLayout, mainOtherLayout, this);

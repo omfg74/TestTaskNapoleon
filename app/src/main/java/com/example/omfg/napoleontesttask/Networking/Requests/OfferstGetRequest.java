@@ -32,11 +32,11 @@ import retrofit2.Response;
 public class OfferstGetRequest {
 
     List<AppObjects.Offer> offers = new ArrayList<>();
-    FrameLayout linearLayout;
-    FrameLayout linearLayout2;
+    LinearLayout linearLayout;
+    LinearLayout linearLayout2;
     Context context;
 
-    public OfferstGetRequest(List<Offer> offers, FrameLayout linearLayout, FrameLayout linearLayout2, Context context) {
+    public OfferstGetRequest(List<Offer> offers, LinearLayout linearLayout, LinearLayout linearLayout2, Context context) {
         this.offers = offers;
         this.linearLayout = linearLayout;
         this.context = context;

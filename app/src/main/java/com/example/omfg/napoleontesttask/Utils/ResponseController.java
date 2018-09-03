@@ -25,7 +25,7 @@ public class ResponseController implements ResponseInterface {
     }
 
     @Override
-    public List<Offer> createGetOffersResponse(FrameLayout linearLayout, FrameLayout linearLayout2, Context context) {
+    public List<Offer> createGetOffersResponse(LinearLayout linearLayout, LinearLayout linearLayout2, Context context) {
         List<Offer> offers = new ArrayList<>();
 
         OfferstGetRequest offerstGetRequest = new OfferstGetRequest(offers, linearLayout, linearLayout2, context);
