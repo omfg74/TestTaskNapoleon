@@ -16,7 +16,7 @@ public class RetrofitClient {
     private static RetrofitClient instance = null;
     private Retrofit retrofit;
     private OkHttpClient client;
-
+    public static final String API_URL = "http://s3.eu-central-1.amazonaws.com/sl.files/";
     private RetrofitInterface retrofitInterface;
 
     public RetrofitClient() {
@@ -32,7 +32,7 @@ public class RetrofitClient {
 
         client = okHttpBuilder.build();
 
-        retrofit = new Retrofit.Builder().baseUrl(Constants.API_URL)
+        retrofit = new Retrofit.Builder().baseUrl(API_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
